@@ -27,10 +27,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save # => Validation
       # Sucess
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
-      # GET "/users/#{@user.id}" => show
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       # Failure
       render 'new'      
@@ -64,7 +63,7 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
-  
+
   private
 
     def user_params
