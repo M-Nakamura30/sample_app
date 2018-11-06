@@ -66,11 +66,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-<<<<<<< HEAD
-  host = 'https://salty-dawn-48468.herokuapp.com'
-=======
-  host = 'coedo-sample-app.herokuapp.com'
->>>>>>> account-activation
+  host = 'salty-dawn-48468.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
